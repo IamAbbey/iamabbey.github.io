@@ -2,19 +2,42 @@ baseURL: "https://iamabbey.github.io/"
 title: Abiodun Sotunde
 paginate: 5
 theme: PaperMod
-enableEmoji: true
-canonifyURLs: true
 
+enableInlineShortcodes: true
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+# canonifyURLs: true
 
-googleAnalytics: UA-123-45
+# googleAnalytics: UA-123-45
 
 minify:
   disableXML: true
-  minifyOutput: true
+  # minifyOutput: true
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+    menu:
+      main:
+        - name: Archive
+          url: archives
+          weight: 10
+        - identifier: search
+          name: Search
+          url: search/
+          weight: 20
+        - identifier: tags
+          name: tags
+          url: tags/
+          weight: 30
 
 
 outputs:
@@ -126,19 +149,8 @@ params:
     threshold: 0.4
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
-menu:
-  main:
-    - name: Archive
-      url: archives
-      weight: 10
-    - identifier: search
-      name: Search
-      url: search/
-      weight: 20
-    - identifier: tags
-      name: tags
-      url: tags/
-      weight: 30
+
+
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
