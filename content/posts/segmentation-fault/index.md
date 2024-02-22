@@ -2,7 +2,7 @@
 title: "Segmentation Fault in Python"
 date: 2023-11-15T15:37:59+01:00
 # weight: 1
-# aliases: ["/first"]
+aliases: ["/segmentation-fault-in-python"]
 tags: ["python"]
 author: "Me"
 # author: ["Me", "You"] # multiple authors
@@ -104,19 +104,19 @@ Now, having gotten the right configuration on the prototype, I was able to repro
 The core dump was 'dumped' in the current working directory as in `/proc/sys/kernel/core_pattern`
 
 - To analyse the core dumps, within the running container, I ran `gdb` (install with `apt-get install gdb` if it does not exist) with the target program (in our case `Python`) and the core dump file:
-	![gdb logs](/segmentation-fault/gdb-log.png)
+	![gdb logs](images/gdb-log.png)
 	The marked area is interesting as it shows that it is a segmentation fault in one of the `CPython` file.
 
 - Futhermore, I ran the `bt` command to show the Stack back traces on how we arrived at the point of failure, these are often enough to help identify a common problem. It's usually the first command one would use in a gdb session: `bt` (short for backtrace)
-	![bt logs](/segmentation-fault/bt-log.png)
+	![bt logs](images/bt-log.png)
 	*We can also use the `bt full` - this shows the Stack back traces and Print the values of the local variables also. This was useful as it gave insights as to what might be associated with cause of the issue.*
 
 **Now with the GDB Python Support [info](https://devguide.python.org/development-tools/gdb/); we can further enhance gdb for easier debugging of a CPython process.**
 
 - Using the `py-bt` command, I can now see a Python-level backtrace of the current thread; and this indeed was helpful as I was now able to see indeed the affected package, affected python level file and code line.
-	![py-bt log](/segmentation-fault/py-bt-log.jpg)
+	![py-bt log](images/py-bt-log.jpg)
 
-- Using the `py-list` command, you can see the faulty code fragement; and also th `>` point to the fault line.![py-list log](/segmentation-fault/py-list.jpg)
+- Using the `py-list` command, you can see the faulty code fragement; and also th `>` point to the fault line.![py-list log](images/py-list.jpg)
 
 
 #### Final Words

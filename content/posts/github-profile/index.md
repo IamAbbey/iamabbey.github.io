@@ -2,7 +2,7 @@
 title: 'Github Profile in Minutes'
 date: 2022-05-07T10:39:35+01:00
 # weight: 1
-# aliases: ["/first"]
+aliases: ["/create-an-awesome-github-profile-in-minutes"]
 tags: ["documentation"]
 author: "Me"
 # author: ["Me", "You"] # multiple authors
@@ -63,4 +63,4 @@ It allows you to generate a beautiful landing page for your GitHub profile.
 10. Click Commit Changes to save your new GitHub profile.
 
 
-![github-profile](/github-profile/github-profile.png)
+![github-profile](images/github-profile.png)
