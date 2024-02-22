@@ -3,6 +3,7 @@ title: Abiodun Sotunde
 paginate: 5
 theme: PaperMod
 enableEmoji: true
+canonifyURLs: true
 
 enableRobotsTXT: true
 buildDrafts: false
