@@ -1,6 +1,9 @@
 baseURL: "https://iamabbey.github.io/"
 title: Abiodun Sotunde
-paginate: 5
+pagination:
+  disableAliases: false
+  pagerSize: 5
+  path: page
 theme: PaperMod
 
 enableInlineShortcodes: true
@@ -109,7 +112,7 @@ params:
     Content: >
         - I'm **Abiodun**, a Software Developer currently based in Aachen Germany 🇩🇪.
 
-        - On here, I share some tips & tricks.
+        - On here, I share coding tips, tricks and learnings.
         
         - Do give a 🌟 on Github !
 
